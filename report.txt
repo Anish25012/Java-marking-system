@@ -1,0 +1,5 @@
+Test failed: java.lang.AssertionError: Should see flour, marks deducted -5
+Test failed: should check if you can or cannot take items,marks deducted -3.75
+Test failed: item should have description of egg, marks deducted -3.34
+Test failed: item should have description of flour, marks deducted -3.33
+Test failed: item should have description of sugar, marks deducted -3.33
