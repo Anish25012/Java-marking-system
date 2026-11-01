@@ -1,57 +1,36 @@
-# Java Marking System 🎓
+# Java Marking System
 
-## 📌 Overview
+[![Tests](https://github.com/Anish25012/Java-marking-system/actions/workflows/tests.yml/badge.svg)](https://github.com/Anish25012/Java-marking-system/actions/workflows/tests.yml)
 
-This final year project is a Java-based automated marking system designed to streamline the evaluation of student programming assignments. The system improves efficiency, consistency, and fairness in grading while providing detailed feedback to students.
+An automated marker for student Java coursework, built as a final year group project at the University of Kent. It takes a student's ZIP, runs their code against the assignment's tests, and produces a mark out of 100, a PDF of feedback and a row in an Excel results sheet. Each submission takes under a minute.
 
----
+## How it works
 
-## 🚀 Features
+1. **Check and extract.** `compilation` finds the ZIP, rejects submissions in the wrong format, asks for the student's login and extracts the code.
+2. **Test.** `projectTesting` runs JUnit tests against the extracted code. Each failed test deducts marks and records why.
+3. **Report.** iText writes per-student PDF feedback, and Apache POI adds the marks to `studentMarks.xlsx`, creating it if it doesn't exist.
 
-* **ZIP Extraction System**
-  Automatically extracts and processes student submissions from ZIP files, improving workflow efficiency.
+## What's in here
 
-* **Automated Grading Engine**
-  Evaluates student code using custom algorithms and assigns marks on a **100-point scale**, ensuring consistent and fair assessment.
+| Path | What it is |
+| --- | --- |
+| `src/main/java/compilation.java` | Checks and extracts a submission |
+| `src/test/java/CompilationTest.java` | Tests for that step, run on every push |
+| `harness/projectTesting.java` | The marking tests, plus PDF and Excel output. It's built for one assignment, a text adventure game, so it only compiles alongside that assignment's code. |
+| `samples/homeSolution.zip` | A sample submission of that assignment |
 
-* **PDF Report Generation**
-  Generates detailed feedback reports using the **iText library**, highlighting performance and areas for improvement.
+## Run it
 
-* **Progress Tracking with Excel**
-  Uses **Apache POI** to create and manage spreadsheets for tracking student results and progress over time.
+You'll need Java 21 and Maven.
 
-* **Data-Driven Insights**
-  Enables better decision-making and tailored student support through organized performance data.
+```bash
+mvn test
+```
 
----
+To mark a submission, put its ZIP in `comp6000 submission/src`, run `compilation` and enter the student's login, then run `projectTesting` alongside the extracted code.
 
-## 🛠️ Technologies Used
+## Team
 
-* Java
-* iText (PDF generation)
-* Apache POI (Excel handling)
-* Microsoft Excel
+Anish Joshi, Anthony Tse, Zinuo Chen and Wenbo Wu. Authors of each part are credited in the code.
 
----
-
----
-
-## 📊 Project Outcome
-
-* Improved efficiency in handling and grading large volumes of student submissions
-* Ensured fair and standardized marking across all students
-* Provided clear, structured feedback through automated reports
-* Recognized by supervisor for innovation and contribution to the academic process
-
----
-
-## 📎 Notes
-
-* Large datasets or student submissions are not included in this repository
-* Available upon request if needed
-
----
-
-## 👤 Author
-
-Final Year Computer Science Project
+No student data is kept in this repository.
