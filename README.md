@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/Anish25012/Java-marking-system/actions/workflows/tests.yml/badge.svg)](https://github.com/Anish25012/Java-marking-system/actions/workflows/tests.yml)
 
-An automated marker for student Java coursework, built as a final year group project at the University of Kent. It takes a student's ZIP, runs their code against the assignment's tests, and produces a mark out of 100, a PDF of feedback and a row in an Excel results sheet. Each submission takes under a minute.
+An automated marker for student Java coursework, built as a final year project at the University of Kent. It takes a student's ZIP, runs their code against the assignment's tests, and produces a mark out of 100, a PDF of feedback and a row in an Excel results sheet. Each submission takes under a minute.
 
 ## How it works
 
@@ -28,9 +28,5 @@ mvn test
 ```
 
 To mark a submission, put its ZIP in `comp6000 submission/src`, run `compilation` and enter the student's login, then run `projectTesting` alongside the extracted code.
-
-## Team
-
-Anish Joshi, Anthony Tse, Zinuo Chen and Wenbo Wu. Authors of each part are credited in the code.
 
 No student data is kept in this repository.

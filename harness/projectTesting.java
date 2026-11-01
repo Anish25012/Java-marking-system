@@ -1718,15 +1718,14 @@ public class projectTesting {
 }
 /**
  * This is the  class called PDFmaker
- * @Author- Zinuo Chen and Wenbo Wu
- *         -Anish Joshi
+ * @Author- Anish Joshi
  *
  */
 
 class PDFmaker {
     public static void pdfMaker() throws IOException {
         /**
-         * author of this section Zinuo Chen and Wenbo Wu;
+         * author of this section Anish Joshi;
          */
 
         Document document = null;
@@ -1808,7 +1807,7 @@ class PDFmaker {
 
 /**
  * This is the  class called spreadsheet
- *  @Author-Anish Joshi and Anthony Tse
+ *  @Author-Anish Joshi
  *
  */
 
@@ -1881,7 +1880,7 @@ class spreadsheet {
     /**
      *
      * adds a new row of data of the breakdown of marks of the student
-     * @Author of this method-Anthony Tse
+     * @Author of this method-Anish Joshi
      *
      **/
 
